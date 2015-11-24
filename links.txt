@@ -1,0 +1,17 @@
+https://github.com/basho
+
+https://github.com/webmachine/webmachine
+
+http://learnyousomeerlang.com/content
+
+https://en.wikipedia.org/wiki/LYME_(software_bundle)
+
+http://yaws.hyber.org/
+
+http://www.erlang.org/doc/man/mnesia.html
+
+https://developers.openshift.com/en/get-involved-extend-openshift.html
+
+http://www.erlang.org/doc/man/epmd.html
+
+
