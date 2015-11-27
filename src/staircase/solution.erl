@@ -2,14 +2,28 @@
 -export([main/0]).
 
 main() ->
-    {ok, [N]} = io:fread("", "~d"),
-    drawStaircase(N).
+    {ok, [Size]} = io:fread("", "~d"),
+    drawStaircase(Size).
 
-read_array(0, D) -> [];
-read_array(N, D) -> 
-   {ok, [X]} = io:fread("", D),
-   [X | read_array(N-1, D)].
 
-drawStaircase(N) -> drawStaircase(N, N).
+drawStaircase(Size) -> drawStaircase(Size, Size).
 
-drawStaircase(N, Level) -> drawStaircase(N, N).
+drawStaircase(_Size, Level) when Level == 0 -> 
+	true;
+
+drawStaircase(Size, Level) -> 
+	drawLevel(Size, Level, 1),
+	io:format("~n"),
+	drawStaircase(Size, Level - 1).
+
+
+drawLevel(Size, _Level, Pos) when Pos > Size -> 
+	true;
+
+drawLevel(Size, Level, Pos) when Pos < Level -> 
+	io:format(" "),
+	drawLevel(Size, Level, Pos + 1);
+
+drawLevel(Size, Level, Pos) when Pos >= Level -> 
+	io:format("#"),
+	drawLevel(Size, Level, Pos + 1).
